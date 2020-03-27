@@ -2,6 +2,8 @@ import React from "react";
 import {BrowserRouter, Route, Link} from "react-router-dom";
 import Form from './components/Form';
 import Pizza from './components/Pizza';
+import './App.css';
+
 
 // function Home(props){
 //   const {push} = props.history;
