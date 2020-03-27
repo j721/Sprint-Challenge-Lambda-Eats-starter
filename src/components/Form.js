@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"
 import axios from "axios";
 import * as yup from "yup";
 
@@ -107,6 +108,9 @@ export default function Form() {
 
   return (
     <form onSubmit={formSubmit}>
+        <Link to={"/"}>
+                <div>Home</div>
+            </Link>
       <label htmlFor='name'>
         Name
         <input
