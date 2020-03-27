@@ -18,7 +18,7 @@ const formSchema = yup.object().shape({
 
 export default function Form() {
   // state for whether our button should be disabled or not.
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [button, setButton] = useState(true);
 
   // managing state for our form inputs
   const [formState, setFormState] = useState({
@@ -49,9 +49,10 @@ export default function Form() {
 
   useEffect(() => {
     formSchema.isValid(formState).then(valid => {
-      setButtonDisabled(!valid);
+        setButton(!valid);
     });
-  }, [formState]);
+}, [formState]);
+
 
   const formSubmit = e => {
     e.preventDefault();
@@ -76,7 +77,6 @@ export default function Form() {
   };
 
   const validateChange = e => {
-    // Reach will allow us to "reach" into the schema and test only one part.
     yup
       .reach(formSchema, e.target.name)
       .validate(e.target.value)
@@ -118,16 +118,18 @@ export default function Form() {
       <label htmlFor='name'>
         Name
         <input
+        id="name"
           type='text'
           name='name'
           value={formState.name}
           onChange={inputChange}
         />
         {errors.name.length > 0 ? <p className='error'>{errors.name}</p> : null}
-      </label>
+      </label> <br/>
       <label htmlFor='sauce'>
         Sauce
         <input
+        id="sauce"
           type='text'
           name='sauce'
           value={formState.sauce}
@@ -137,6 +139,7 @@ export default function Form() {
           <p className='error'>{errors.sauce}</p>
         ) : null}
       </label>
+      <br/>
       <label htmlFor='Instructions'>
         Special Instructions
         <textarea
@@ -148,6 +151,7 @@ export default function Form() {
           <p className='error'>{errors.instructions}</p>
         ) : null}
       </label>
+      <br/>
       <label htmlFor='size'>
         Select your Pizza Size
         <select id='size' name='size' onChange={inputChange}>
@@ -156,7 +160,7 @@ export default function Form() {
           <option value='Large'>Large</option>
         </select>
       </label>
-
+      <br/>
       <label htmlFor='cheese' className='cheese'>
         <input
           type='checkbox'
@@ -198,9 +202,8 @@ export default function Form() {
         Pineapple
       </label>
 
-      {/* displaying our post request data */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      <button disabled={buttonDisabled}>Add to Order</button>
+              <button disabled={button}>Add to Order</button>
     </form>
   );
 }
