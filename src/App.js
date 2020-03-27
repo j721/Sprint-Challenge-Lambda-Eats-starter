@@ -5,18 +5,6 @@ import Pizza from './components/Pizza';
 import './App.css';
 
 
-// function Home(props){
-//   const {push} = props.history;
-//   return (
-//     <div>
-//     <h3>Home</h3>
-//     <button onClick ={()=> push("/")}>Home</button>
-//     </div>)
-// }
-
-
-
-
 function App() {
   return (
     <div className="App">
