@@ -120,6 +120,10 @@ export default function Form() {
             <Link to={"/pizza"}>
                 <div>Pizza</div>
             </Link>
+            <div className="pizzaPictures">
+            <img className="pizza resturant" src="https://images.unsplash.com/photo-1563245738-9169ff58eccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" 
+            alt="pizzas on display" />
+            </div>
       <label htmlFor='name'>
         Name
         <input
