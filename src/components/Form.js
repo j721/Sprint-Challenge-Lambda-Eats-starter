@@ -78,7 +78,12 @@ export default function Form() {
 
   const validateChange = e => {
     yup
-      .reach(formSchema, e.target.name)
+      .reach(formSchema, e.target.name) 
+    //   .validate(e.target.name === "pineapple" ? e.target.checked : e.target.value)
+    //   .validate(e.target.name === "cheese" ? e.target.checked : e.target.value)
+    //   .validate(e.target.name === "meat" ? e.target.checked : e.target.value)
+    //   .validate(e.target.name === "mushrooms" ? e.target.checked : e.target.value)
+
       .validate(e.target.value)
       .then(valid => {
         setErrors({
@@ -168,9 +173,9 @@ export default function Form() {
           checked={formState.cheese}
           onChange={inputChange}
         />
+         {/* {errors.cheese.length > 0 ? <p className="error">{errors.cheese}</p> : null}  */}
         Cheese
       </label>
-
 
       <label htmlFor='meat' className='meat'>
         <input
@@ -179,6 +184,7 @@ export default function Form() {
           checked={formState.meat}
           onChange={inputChange}
         />
+           {/* {errors.meat.length > 0 ? <p className="error">{errors.meat}</p> : null}  */}
         Meat
       </label>
 
@@ -189,6 +195,7 @@ export default function Form() {
           checked={formState.mushrooms}
           onChange={inputChange}
         />
+         {/* {errors.mushrooms.length > 0 ? <p className="error">{errors.mushrooms}</p> : null}  */}
         Mushrooms
       </label>
 
@@ -199,6 +206,7 @@ export default function Form() {
           checked={formState.pineapple}
           onChange={inputChange}
         />
+           {/* {errors.pineapple.length > 0 ? <p className="error">{errors.pineapple}</p> : null}  */}
         Pineapple
       </label>
 
