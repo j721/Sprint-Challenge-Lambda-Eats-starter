@@ -111,6 +111,10 @@ export default function Form() {
         <Link to={"/"}>
                 <div>Home</div>
             </Link>
+
+            <Link to={"/pizza"}>
+                <div>Pizza</div>
+            </Link>
       <label htmlFor='name'>
         Name
         <input
