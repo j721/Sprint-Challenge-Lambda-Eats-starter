@@ -1,7 +1,8 @@
 import React from "react";
-import {Route} from "react-router-dom";
+import {BrowserRouter, Route, Link} from "react-router-dom";
 import Form from './components/Form';
 import Pizza from './components/Pizza';
+
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     <div className="App">
     <h1>Pizza Parlor</h1>
     <Route exact path = "/" component={Form}/>
-     {/* <Route path ='/pizza' component ={Pizza}/> */}
+     <Route path ='/pizza' component ={Pizza}/>
     </div>
   );
 }
