@@ -192,7 +192,7 @@ export default function Form() {
 
       {/* displaying our post request data */}
       <pre>{JSON.stringify(post, null, 2)}</pre>
-      <button disabled={buttonDisabled}>Submit</button>
+      <button disabled={buttonDisabled}>Add to Order</button>
     </form>
   );
 }
